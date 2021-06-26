@@ -21,6 +21,12 @@ export declare const BrowserHelper: {
      */
     close(): Promise<void>;
     /**
+     * close tab at a particular position
+     * @param tabNumber - tab which needs to be closed
+     * @param windowHandles - all window handles available
+     */
+    closeTab(tabNumber: number, windowHandles: string[]): Promise<void>;
+    /**
      * maximize
      * @returns {Promise<void>}
      */

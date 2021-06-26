@@ -35,6 +35,17 @@ export const BrowserHelper = {
   },
 
   /**
+   * close tab at a particular position
+   * @param tabNumber - tab which needs to be closed
+   * @param windowHandles - all window handles available
+   */
+  async closeTab(tabNumber: number, windowHandles: string[]): Promise<void> {
+    await this.switchToWindow(windowHandles[tabNumber]);
+    await browser.driver.close();
+    await this.switchToWindow(windowHandles[0]);
+  },
+
+  /**
    * maximize
    * @returns {Promise<void>}
    */
